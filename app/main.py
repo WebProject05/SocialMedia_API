@@ -15,7 +15,7 @@ app = FastAPI()
 
 
 try:
-    conn = psycopg2.connect(host = 'localhost', database = 'FastApi', user = 'postgres', password = 'Santosh@2005', cursor_factory=RealDictCursor)
+    conn = psycopg2.connect(host = 'localhost', database = 'FastApi', user = 'postgres', password = '####', cursor_factory=RealDictCursor)
     cursor = conn.cursor()
     print("DataBase Connection Successful.")
 except Exception as e:
