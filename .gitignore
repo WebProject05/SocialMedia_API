@@ -1,0 +1,12 @@
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+
+# MyPy
+.mypy_cache/
+
+
+# Virtual environments
+venv/
+.venv/
