@@ -1,4 +1,5 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
+from datetime import datetime
 
 class PostBase(BaseModel):
     title: str
@@ -33,11 +34,14 @@ class Post(BaseModel):
 # USER Schemas
 
 class UserCreate(BaseModel):
-    # username: str
     email: EmailStr
-    password: str
-
+    password: str = Field(
+        min_length=8,
+        max_length=256,
+        description="Password must be at least 8 characters"
+    )
 
 class UserOut(BaseModel):
     id: int
     email: EmailStr
+    created_at: datetime    
